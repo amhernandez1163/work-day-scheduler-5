@@ -3,13 +3,13 @@ var tasks = $("#tasksInput").val();
 var addDate = moment().format('MMMM Do YYYY, h:mm:ss a');
 $("#currentDay").text(addDate);
 
+
+
 $(document).ready(function() {
     $("#one").click(function() {
    
         var getTaskInput = $.trim($("#tasksInput1").val());
-        if(localStorage.getItem("text") === null){
             localStorage.setItem("text", JSON.stringify(getTaskInput));
-        }
         
         //var taskText = JSON.parse(localStorage.getItem("text"));
        //taskText.push(tasks);
@@ -22,9 +22,8 @@ $(document).ready(function() {
     $("#two").click(function() {
    
         var getTaskInput = $.trim($("#tasksInput2").val());
-        if(localStorage.getItem("text") === null){
             localStorage.setItem("text", JSON.stringify(getTaskInput));
-        }
+        
     });
 });
 
