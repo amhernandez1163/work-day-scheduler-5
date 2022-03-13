@@ -1,22 +1,15 @@
-var tasks = $("#tasksInput").val();
-
-var addDate = moment().format('MMMM Do YYYY, h:mm:ss a');
+// setting date using the currentDay id selector 
+var addDate = moment().format('MMMM Do YYYY,');
 $("#currentDay").text(addDate);
 
 
-
+// beginning of save button funcationality per time block 8 AM - 5 PM
 $(document).ready(function() {
     $("#one").click(function() {
    
         var getTaskInput = $.trim($("#tasksInput1").val());
-            if(localStorage.getItem("8AM") == null) {
-                localStorage.setItem("8AM", (getTaskInput));
-        }
-        
-        var old8AM = JSON.parse(localStorage.getItem('8AM'));
-        old8AM.push(getTaskInput);
-
-        localStorage.setItem("8AM", (old8AM));
+        localStorage.setItem("8AM", (getTaskInput));
+    });
 });
 
 $(document).ready(function() {
@@ -93,17 +86,4 @@ $(document).ready(function() {
     });
 });
 
-
-//$(".saveBtn").click(function() {
-  ////  getTaskInput();
-//});
-
-
-
-
-//var getTaskInput = function () {
-    
-  //  var taskInput = document.getElementById("tasksInput").value;
-
-//};
-
+// End of time black save button functionality // 
