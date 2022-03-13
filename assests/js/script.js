@@ -9,20 +9,21 @@ $(document).ready(function() {
     $("#one").click(function() {
    
         var getTaskInput = $.trim($("#tasksInput1").val());
-            localStorage.setItem("text", JSON.stringify(getTaskInput));
+            if(localStorage.getItem("8AM") == null) {
+                localStorage.setItem("8AM", (getTaskInput));
+        }
         
-        //var taskText = JSON.parse(localStorage.getItem("text"));
-       //taskText.push(tasks);
-        
-        //localStorage.setItem("text", JSON.stringify(getTaskInput));
-    });
+        var old8AM = JSON.parse(localStorage.getItem('8AM'));
+        old8AM.push(getTaskInput);
+
+        localStorage.setItem("8AM", (old8AM));
 });
 
 $(document).ready(function() {
     $("#two").click(function() {
    
         var getTaskInput = $.trim($("#tasksInput2").val());
-            localStorage.setItem("text", JSON.stringify(getTaskInput));
+            localStorage.setItem("9AM", (getTaskInput));
         
     });
 });
@@ -31,7 +32,7 @@ $(document).ready(function() {
     $("#three").click(function() {
    
         var getTaskInput = $.trim($("#tasksInput3").val());
-        console.log(getTaskInput);
+        localStorage.setItem("10AM", (getTaskInput));
     });
 });
 
@@ -39,7 +40,7 @@ $(document).ready(function() {
     $("#four").click(function() {
    
         var getTaskInput = $.trim($("#tasksInput4").val());
-        console.log(getTaskInput);
+        localStorage.setItem("11AM", (getTaskInput));
     });
 });
 
@@ -47,7 +48,7 @@ $(document).ready(function() {
     $("#five").click(function() {
    
         var getTaskInput = $.trim($("#tasksInput5").val());
-        console.log(getTaskInput);
+        localStorage.setItem("12PM", (getTaskInput));
     });
 });
 
@@ -55,7 +56,7 @@ $(document).ready(function() {
     $("#six").click(function() {
    
         var getTaskInput = $.trim($("#tasksInput6").val());
-        console.log(getTaskInput);
+        localStorage.setItem("1PM", (getTaskInput));
     });
 });
 
@@ -63,7 +64,7 @@ $(document).ready(function() {
     $("#seven").click(function() {
    
         var getTaskInput = $.trim($("#tasksInput7").val());
-        console.log(getTaskInput);
+        localStorage.setItem("2PM", (getTaskInput));
     });
 });
 
@@ -71,7 +72,8 @@ $(document).ready(function() {
     $("#eight").click(function() {
    
         var getTaskInput = $.trim($("#tasksInput8").val());
-        console.log(getTaskInput);
+        localStorage.setItem("3PM", (getTaskInput));
+
     });
 });
 
@@ -79,7 +81,7 @@ $(document).ready(function() {
     $("#nine").click(function() {
    
         var getTaskInput = $.trim($("#tasksInput9").val());
-        console.log(getTaskInput);
+        localStorage.setItem("4PM",(getTaskInput));
     });
 });
 
@@ -87,7 +89,7 @@ $(document).ready(function() {
     $("#ten").click(function() {
    
         var getTaskInput = $.trim($("#tasksInput10").val());
-        console.log(getTaskInput);
+        localStorage.setItem("5PM", (getTaskInput));
     });
 });
 
