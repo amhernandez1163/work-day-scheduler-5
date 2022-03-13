@@ -1,24 +1,29 @@
-var taskInput = $("#tasks").text.val();
-var saveButton = $("#saveBtn");
+var tasks = $("#tasksInput").val();
 
 var addDate = moment().format('MMMM Do YYYY, h:mm:ss a');
 $("#currentDay").text(addDate);
 
 
-$(function () {
-    alert(taskInput);
-});
+var saveTasks = function () {
 
-saveButton.click(function() {
-    console.log("text was saved");
-});
+    if(localStorage.getItem("text") === null){
+        localStorage.setItem("text", "tasks");
+    }
 
-var getTasks = function () {
-    tasks = JSON.parse(localStorage.getItem("tasks"))
-}
+    var taskText = JSON.parse(localStorage.getItem("text"));
+    taskText.push(tasks);
 
-var saveTasks = function() {
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+    localStorage.setItem("text", JSON.stringify(tasks));
+
+ saveTasks();
 };
+
+
+
+$(".saveBtn").click(function() {
+    console.log("click registered");
+});
+
+
 
 
