@@ -9,7 +9,7 @@ $(document).ready(function() {
    
         var getTaskInput = $.trim($("#tasksInput1").val());
         localStorage.setItem("8AM", (getTaskInput));
-        $("#tasksInput1.description").val(localStorage.getItem("8AM"));
+        $("#tasksInput1").val(localStorage.getItem("8AM"));
     });
 });
 
@@ -97,3 +97,31 @@ $(document).ready(function() {
 });
 
 // End of time black save button functionality // 
+
+// Begin Time Block Color Functionality //
+
+var colorCode = function () {
+    var time = moment().format("h:mm:ss a");
+
+    $(".description").each(function(){
+        var timeBlock = parseInt($(this).attr(".description"));
+
+        if(timeBlock === time) {
+            $(".description").addClass("present");
+        };
+
+        if(timeBlock < time) {
+            $(".description").removeClass("present");
+            $(".description").removeClass("future");
+            $(".description").addClass("past");
+        } 
+        else {
+                $(".description").removeClass("present");
+                $(".description").addClass("future");
+                $(".description").removeClass("past");
+        }
+    });
+    
+};
+
+colorCode();
