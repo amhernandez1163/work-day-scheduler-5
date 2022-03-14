@@ -104,10 +104,12 @@ var colorCode = function () {
     var time = moment().format("h:mm:ss a");
 
     $(".description").each(function(){
-        var timeBlock = parseInt($(this).attr(".description"));
+        var timeBlock = addDate;
 
         if(timeBlock === time) {
             $(".description").addClass("present");
+            $(".description").removeClass("future");
+            $(".description").removeClass("past");
         };
 
         if(timeBlock < time) {
